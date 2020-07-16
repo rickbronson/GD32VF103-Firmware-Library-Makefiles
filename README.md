@@ -5,6 +5,8 @@ This is everything you need to build the GD32VF103_Firmware_Library using Makefi
 
 I had tried in vain to use the DFU loader (I tried several versions of dfu-util inclding gd32-dfu-utils) that came with my Longan Nano but it was so flaky I gave up and used a Segger Jlink to flash.  It seemed to work *sometimes* with small binaries but almost always failed with larger ones.
 
+For the Longan Nano, GD32VF103_Firmware_Library was missing support for SD Cards (TF Cards) so I added that in the Examples/SPI/SPI_tf_card directory.
+
 Debian Buster was used to build.
 
   Instructions
@@ -12,7 +14,7 @@ Debian Buster was used to build.
 1. Make sure you have all the necessary packages to build.
 
 ```
-sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev libusb-1.0-0 util-linux libncurses5 pkg-config
+sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev libusb-1.0-0 util-linux libncurses5 pkg-config libncursesw5
 ```
 
   If you will be using a USB serial port, add yourself to the dialout group:
